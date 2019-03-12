@@ -1,15 +1,15 @@
 function sortUI(e){
-				if(e.nodes != null && e.nodes.length > 0)
-				{		
-					e.nodes.sort((a,b) => (a.text.toLowerCase() > b.text.toLowerCase()) ? 1 : ((b.text.toLowerCase() > a.text.toLowerCase()) ? -1 : 0));
-					e.nodes.forEach(function(k){
-          if(k.nodes!=null && k.nodes.length>0)
-              {
-                  sortUI(k);
-              }
-						})
-				}
-			}
+	if(e.nodes != null && e.nodes.length > 0)
+	{		
+		e.nodes.sort((a,b) => (a.text.toLowerCase() > b.text.toLowerCase()) ? 1 : ((b.text.toLowerCase() > a.text.toLowerCase()) ? -1 : 0));
+		e.nodes.forEach(function(k){
+			if(k.nodes!=null && k.nodes.length>0)
+        	      	{
+	                  sortUI(k);
+              		}
+		})
+	}
+}
 // var nestedArr
 // assuming nestedArr[i].nodes has the subArrays
 nestedArr.forEach(sortUI);
